@@ -1,0 +1,33 @@
+<div class="container">
+  <a routerLink="/home/addUser" class="btn btn-success">New User</a>
+  <br />
+
+  <div class="table-container">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Age</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of users">
+          <td>{{ user.name }}</td>
+          <td>{{ user.email }}</td>
+          <td>{{ user.age }}</td>
+          <td>
+            <button class="btn btn-edit btn-warning" (click)="onEdit(user)">
+              Edit
+            </button>
+            &nbsp;
+            <button class="btn btn-delete btn-danger" (click)="onDelete(user)">
+              Delete
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
